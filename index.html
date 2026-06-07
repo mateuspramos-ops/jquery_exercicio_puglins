@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<!-- saved from url=(0057)file:///C:/Users/User/Downloads/index_plugins_jquery.html -->
-<html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Formulário de Cadastro - Módulo 10</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com/">
-  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-  <link href="./index_files/css" rel="stylesheet">
-  <link rel="stylesheet" href="./index_files/main.css">
-  <link rel="stylesheet" type="text/css" href="./index_files/slick.css">
-  <link rel="stylesheet" type="text/css" href="./index_files/slick-theme.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
 </head>
 <body>
 
@@ -17,10 +17,11 @@
     <h1>Adquira seu veículo agora mesmo!</h1>
   </header>
 
+  <!-- Carousel: ID corrigido para "carousel-imagens" -->
   <div id="carousel-imagens">
-    <img src="file:///C:/Users/User/Downloads/assets/slide1.png" alt="Carro da Porsche">
-    <img src="file:///C:/Users/User/Downloads/assets/slide2.png" alt="Carro da BMW">
-    <img src="file:///C:/Users/User/Downloads/assets/slide3.png" alt="Carro da Ford">
+    <img src="./assets/slide1.svg" alt="Carro da Porsche">
+    <img src="./assets/slide2.svg" alt="Carro da BMW">
+    <img src="./assets/slide3.svg" alt="Carro da Ford">
   </div>
 
   <div class="container">
@@ -55,21 +56,14 @@
     </form>
   </div>
 
-  <!-- 1. jQuery PRIMEIRO -->
-  <script src="./index_files/jquery-1.11.0.min.js.download"></script>
-  <script src="./index_files/jquery-migrate-1.2.1.min.js.download"></script>
+  <!-- ORDEM CORRETA: jQuery PRIMEIRO, depois os plugins -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script src="./js/jquery.mask.min.js"></script>
+  <script src="./js/jquery.validate.min.js"></script>
+  <script src="./js/messages_pt_BR.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script src="./js/main.js"></script>
 
-  <!-- 2. Plugins que dependem do jQuery -->
-  <script src="./index_files/jquery.mask.min.js.download"></script>
-  <script src="./index_files/jquery.validate.min.js.download"></script>
-  <script src="./index_files/messages_pt_BR.min.js.download"></script>
-
-  <!-- 3. Slick Carousel -->
-  <script src="./index_files/slick.min.js.download"></script>
-
-  <!-- 4. Código principal -->
-  <script src="file:///C:/Users/User/Downloads/js/main.js"></script>
-
-
-
-</body></html>
+</body>
+</html>
