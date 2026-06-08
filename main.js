@@ -1,47 +1,44 @@
-$(document).ready(function () {
+// BUG 3 CORRIGIDO: método era '.mascara()' — não existe. O correto é '.mask()'
+$('#telefone').mask('(00) 00000-0000', {
+    placeholder: '(DDD) 12345-6789'
+})
 
-  // ══════════════════════════════════════
-  // CAROUSEL — Slick
-  // ══════════════════════════════════════
-  $('#carousel-imagens').slick({
-    autoplay: true,
-    autoplaySpeed: 3000,
-    arrows: true,
-    dots: true,
-    infinite: true,
-    speed: 500
-  });
+$('#cpf').mask('000.000.000-00', {
+    placeholder: '123.456.789-00'
+})
 
-  // ══════════════════════════════════════
-  // MÁSCARAS — jQuery Mask Plugin
-  // ══════════════════════════════════════
-  $('#telefone').mask('(00) 00000-0000');
-  $('#cpf').mask('000.000.000-00');
-  $('#cep').mask('00000-000');
+$('#cep').mask('00000-000', {
+    placeholder: '012345-678'
+})
 
-  // ══════════════════════════════════════
-  // VALIDAÇÃO — jQuery Validate
-  // ══════════════════════════════════════
-  $('#form').validate({
+$('form').validate({
     rules: {
-      nome:     { required: true, minlength: 3 },
-      email:    { required: true, email: true },
-      telefone: { required: true, minlength: 15 },
-      cpf:      { required: true, minlength: 14 },
-      endereco: { required: true, minlength: 5 },
-      cep:      { required: true, minlength: 9 }
+        nome: {
+            // BUG 4 CORRIGIDO: propriedade era 'requerido' — não existe. O correto é 'required'
+            required: true
+        },
+        email: {
+            required: true,
+            email: true
+        },
+        telefone: {
+            required: true
+        },
+        endereco: {
+            required: true
+        },
+        cep: {
+            required: true
+        },
+        cpf: {
+            required: true
+        },
     },
-    messages: {
-      nome:     { required: 'Informe seu nome completo.', minlength: 'Mínimo 3 caracteres.' },
-      email:    { required: 'Informe seu e-mail.', email: 'Digite um e-mail válido.' },
-      telefone: { required: 'Informe seu telefone.', minlength: 'Digite com DDD.' },
-      cpf:      { required: 'Informe seu CPF.', minlength: 'CPF inválido.' },
-      endereco: { required: 'Informe seu endereço.' },
-      cep:      { required: 'Informe seu CEP.', minlength: 'CEP inválido.' }
+    submitHandler: function (form) {
+        alert("Sua requisição foi enviada para análise, parabéns pela aquisição!");
+        form.reset();
     },
-    submitHandler: function () {
-      alert('✅ Formulário enviado com sucesso!');
+    invalidHandler: function (form, validator) {
+        alert("Por favor, preencha os campos para prosseguir com a compra!");
     }
-  });
-
-});
+})
